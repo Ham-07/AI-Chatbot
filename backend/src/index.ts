@@ -14,7 +14,7 @@ app.use(urlencoded());
 app.use(router);
 
 
-app.listen(port, () => {
-  console.log(`app is listening to http://localhost:${port}`);
-});
-// export default app;
+// app.listen(port, () => {
+//   console.log(`app is listening to http://localhost:${port}`);
+// });
+export default app;
