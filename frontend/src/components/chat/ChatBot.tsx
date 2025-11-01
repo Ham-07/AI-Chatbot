@@ -26,7 +26,7 @@ const ChatBot = () => {
       setError("");
 
       setIsBotTyping(true);
-      const { data } = await axios.post<ChatResponse>("/api/chat", {
+      const { data } = await axios.post<ChatResponse>(`${import.meta.env.VITE_BACKEND_URL}/api/chat`, {
         prompt,
         conversationId: conversationId.current,
       });
