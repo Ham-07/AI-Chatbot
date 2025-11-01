@@ -8,12 +8,12 @@ import { chatController } from "./controllers/chatController";
 const router=express.Router();
 
 
-router.get("/api/hello", (req: Request, res: Response) => {
+router.get("/hello", (req: Request, res: Response) => {
   console.log("data fetched");
   res.json({ message: "Hamza" });
 });
 
 
-router.post("/api/chat", chatController.sendMessage);
+router.post("/chat", chatController.sendMessage);
 
 export default router;
