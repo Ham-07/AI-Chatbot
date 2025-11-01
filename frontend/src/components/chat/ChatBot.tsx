@@ -15,6 +15,7 @@ export type Message = {
 };
 
 const ChatBot = () => {
+
   const conversationId = useRef(crypto.randomUUID());
   const [error, setError] = useState<string>("");
   const [messages, setMessages] = useState<Message[]>([]);
@@ -24,9 +25,9 @@ const ChatBot = () => {
     try {
       setMessages((prev) => [...prev, { content: prompt, role: "user" }]);
       setError("");
-
+  
       setIsBotTyping(true);
-      const { data } = await axios.post<ChatResponse>(`${import.meta.env.VITE_BACKEND_URL}/api/chat`, {
+      const { data } = await axios.post<ChatResponse>(`https://ai-chatbot-ebon-five.vercel.app/api/chat`, {
         prompt,
         conversationId: conversationId.current,
       });
